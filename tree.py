@@ -23,6 +23,8 @@ A module for creating tree data structures.
 @author: Todd Shore
 @version: 2012-01-21
 @since: 2012-01-20
+@copyright: Copyright 2011--2012 Todd Shore. Licensed for distribution under the Apache License 2.0: See the files "NOTICE" and "LICENSE".
+@contact: https://github.com/errantlinguist/PyTree
 '''
 
 from copy import deepcopy
@@ -33,6 +35,7 @@ def _is_assigned(idx, seq):
     @param idx: The index to check.
     @param seq: The sequence to check for the index.
     @return: True iff the sequence has the index and the element associated with that index is not None.
+    @rtype: bool
     '''
     # If the length of the entry list is equal to or less than the index, it cannot be assigned already
     if len(seq) <= idx:
@@ -314,6 +317,7 @@ class BiDirectionalLookupNonTerminalNode(NonTerminalNode):
         '''
         Gets the next free index, i.e. the index of the first ``None`` childect or the end of the children list (len(self)).
         @return: The next free index.
+        @rtype: int
         '''
         next_free_index = self.__last_automatically_added_index + 1
         while _is_assigned(next_free_index, self):
